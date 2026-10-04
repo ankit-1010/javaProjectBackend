@@ -120,6 +120,8 @@ public class SecurityConfig {
                         .requestMatchers("/api/transactions/**").authenticated()
                         .requestMatchers("/api/budgets/**").authenticated()
                         .requestMatchers("/api/goals/**").authenticated()
+                        // To awake server
+                        .requestMatchers("/api/health").permitAll()
                         // All other API requests
                         .anyRequest().authenticated()
                 );
